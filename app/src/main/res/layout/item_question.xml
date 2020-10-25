@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="64dp"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="36dp">
+
+            <TextView
+                android:id="@+id/tvcount"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/semibold"
+                android:textColor="@color/capblue"
+                android:letterSpacing="0.01"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvQuestionFirst"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/tvcount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark"
+                android:fontFamily="@font/monserat_medium"
+                android:letterSpacing="0.01"
+                android:textSize="24sp"
+                android:gravity="center"/>
+            
+            <Button
+                android:id="@+id/btnDaOne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="156dp"
+               android:layout_marginStart="12dp"
+                app:layout_constraintEnd_toStartOf="@id/btnNetOne"
+                app:layout_constraintStart_toStartOf="parent"
+                android:elevation="100dp"
+                android:textSize="14sp"
+                android:layout_marginEnd="16dp"
+                android:text="ДА"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:background="@drawable/bg_buttonred"/>
+
+
+            <Button
+                android:id="@+id/btnNetOne"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:elevation="100dp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="156dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/btnDaOne"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="12dp"
+                android:textSize="14sp"
+                android:text="Нет"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
+                android:background="@drawable/bg_buttongreen"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

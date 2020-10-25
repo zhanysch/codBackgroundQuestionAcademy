@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QuetionAcademy</string>
+    <string name="t">не Заболею?</string>
+    <string name="t2">или</string>
+    <string name="y">Заболею</string>
+    <string name="test">НАЧАТЬ ТЕСТ</string>
+    <string name="question_number">%1$d/%1d</string>
+</resources>
