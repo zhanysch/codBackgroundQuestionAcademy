@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.example.quetionacademy.animationuttils.SpinnerTransformation
 import com.example.quetionacademy.answer.AnswerActivity
 import com.example.quetionacademy.utils.PagerDecorator
 import kotlinx.android.synthetic.main.activity_question.*
@@ -49,11 +50,13 @@ class QuestionActivity : AppCompatActivity(), PagerListener {
         adapter.update(generateData())
         pager.isUserInputEnabled = false // чтоб не скролился
         pager.offscreenPageLimit = 6
+        pager.setPageTransformer(SpinnerTransformation()) /// для анимации SpinnerTransformation() это класс с анимцией
         pager.addItemDecoration(PagerDecorator()) // от класса PageDecorator для отступа в пикселях
     }
 
     override fun selectAnswer(answer: Boolean, position: Int) {
         if (answer) questionResult += 20 // баллы за ответ
+        if (!answer) questionResult += 0 // вопрос!!!!
         nextPage(position)
     }
     override fun selectAnswerForbuttons(position: Int, points: Int) { // position: Int, points: Int все из Interface listener

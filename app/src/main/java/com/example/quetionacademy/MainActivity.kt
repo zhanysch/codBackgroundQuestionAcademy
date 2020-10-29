@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupListeners() {
         btnStart.setOnClickListener {
             startActivity(Intent(this, QuestionActivity::class.java))
+            overridePendingTransition(R.anim.slide_left, R.anim.slide_right)
         }
     }
 }
