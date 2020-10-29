@@ -29,7 +29,7 @@ class PagerAdapter(private val listener : PagerListener):RecyclerView.Adapter<Re
         notifyDataSetChanged()
     }
 
-    override fun getItemViewType(position: Int): Int {  // для 2 Viewholderov  //2)
+    override fun getItemViewType(position: Int): Int {  // для 2 Viewholderov исходя по позиции меняем верстку  //2)
         return if (position == 2 ) return FOUR_QUESTIONS
         else TWO_QUESTIONS
     }
@@ -58,11 +58,12 @@ class PagerViewHolder(view:View):RecyclerView.ViewHolder(view){
         itemView.tvcount.text = itemView.context.resources.
         getString(R.string.question_number,
                 position+1 , size)
+        itemView.tvQuestionFirst.text = s
          itemView.btnDaOne.setOnClickListener {
-             listener.selectAnswer(true)
+             listener.selectAnswer(true , position)
          }
         itemView.btnNetOne.setOnClickListener {
-            listener.selectAnswer(false)
+            listener.selectAnswer(false, position)
         }
     }
 }

@@ -10,8 +10,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="45dp"
-        android:layout_marginEnd="45dp"
         app:cardCornerRadius="8dp"
         android:paddingBottom="64dp"
         app:cardElevation="64dp"
@@ -36,7 +34,7 @@
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/tvQuestionFirst"
+                android:id="@+id/tvQuestionfour"
                 android:layout_marginTop="16dp"
                 app:layout_constraintTop_toBottomOf="@id/tvcount"
                 android:layout_width="match_parent"
@@ -55,7 +53,7 @@
                 android:id="@+id/btnzero"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/tvQuestionFirst"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestionfour"
                 android:layout_marginTop="30dp"
                android:layout_marginStart="12dp"
                 app:layout_constraintEnd_toStartOf="@id/btnone"
@@ -74,7 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:elevation="100dp"
-                app:layout_constraintTop_toBottomOf="@id/tvQuestionFirst"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestionfour"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="16dp"
                 app:layout_constraintStart_toEndOf="@id/btnzero"
@@ -90,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:paddingBottom="20dp"
+                android:paddingBottom="40dp"
                 app:layout_constraintTop_toBottomOf="@id/btnone">
 
                 <Button
@@ -116,7 +114,6 @@
                     android:layout_height="wrap_content"
                     android:elevation="100dp"
                     app:layout_constraintTop_toTopOf="parent"
-
                     android:layout_marginStart="16dp"
                     app:layout_constraintStart_toEndOf="@id/btnfive"
                     app:layout_constraintEnd_toEndOf="parent"

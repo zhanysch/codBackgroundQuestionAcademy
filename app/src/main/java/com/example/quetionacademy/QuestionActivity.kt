@@ -1,8 +1,11 @@
 package com.example.quetionacademy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.example.quetionacademy.answer.AnswerActivity
+import com.example.quetionacademy.utils.PagerDecorator
 import kotlinx.android.synthetic.main.activity_question.*
 
 class QuestionActivity : AppCompatActivity(), PagerListener {
@@ -18,14 +21,9 @@ class QuestionActivity : AppCompatActivity(), PagerListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
          setupViewpager()
-        setupListeners()
+
     }
 
-    private fun setupListeners() {
-        next.setOnClickListener {
-            pager.currentItem += 1
-        }
-    }
 
     override fun onBackPressed() { /// метод для обратного скрола на предыдущий ответ!!!!! (важно)
         if (pager.currentItem >0) {
@@ -37,13 +35,12 @@ class QuestionActivity : AppCompatActivity(), PagerListener {
 
     private fun generateData(): ArrayList<String> {
         val list = arrayListOf<String>()
-        list.add("У вас есть проблемы\n" +
-                "с иммунитетом?")
-        list.add("fdsdgsgsdsdfgdfgd")
-        list.add("fdsdgsgsdsdfgdfgdwwwww")
-        list.add("fdsdgsgsdsdfgdfgdwwwww")
-        list.add("fdsdgsgsdsdfgdfgdwwwww")
-        list.add("fdsdgsgsdsdfgdfgdwwwww")
+        list.add(getString(R.string.iuoi))
+        list.add(getString(R.string.te))
+        list.add(getString(R.string.dhfh))
+        list.add(getString(R.string.th))
+        list.add(getString(R.string.tfgd))
+        list.add(getString(R.string.hgfd))
         return list
     }
 
@@ -51,10 +48,30 @@ class QuestionActivity : AppCompatActivity(), PagerListener {
         pager.adapter = adapter
         adapter.update(generateData())
         pager.isUserInputEnabled = false // чтоб не скролился
+        pager.offscreenPageLimit = 6
+        pager.addItemDecoration(PagerDecorator()) // от класса PageDecorator для отступа в пикселях
     }
 
-    override fun selectAnswer(answer: Boolean) {
+    override fun selectAnswer(answer: Boolean, position: Int) {
+        if (answer) questionResult += 20 // баллы за ответ
+        nextPage(position)
+    }
+    override fun selectAnswerForbuttons(position: Int, points: Int) { // position: Int, points: Int все из Interface listener
+        questionResult += points
+        nextPage(position)
+    }
+
+    private fun nextPage(position: Int){
         pager.currentItem += 1  // перевод на другую страницу при клике да нет
-        if (answer) questionResult += 10  // балл при нажатии на да
+        if (position + 1 == adapter.itemCount)  { // для прехода с вопрос активити на ответ активити
+            val intent = Intent(this, AnswerActivity :: class.java)
+            intent.putExtra(POINTS, questionResult)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    companion object {
+        const val  POINTS = "POINTS"
     }
 }

@@ -9,13 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#007EFF</color>
     <color name="blackTwo">#0A0909</color>
-    <color name="yellow">#EBE100</color>
     <color name="capblue">#007EFF</color>85B71A
     <color name="dark">#25282B</color>
     <color name="red">#E93C3C</color>
-    <color name="green">#1AB759</color>
-    <color name="yellowtwo">#FDA608</color>
-    <color name="greenanswerone">#1AB759</color>
-    <color name="greenanswertwo">#85B71A</color>
-    <color name="yellowanswerthree">#EBE100</color>
+    <color name="lightgreen">#1AB759</color>
+    <color name="green">#85B71A</color>
+    <color name="yellow">#EBE100</color>
+    <color name="orange">#FDA608</color>
+
 </resources>
