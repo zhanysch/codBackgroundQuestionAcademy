@@ -9,14 +9,18 @@ enum class EnumResult(
         val drawbleDivider: Int,
         val textTitle : Int,
         val smallTitle: Int,
-        val color : Int
+        val color : Int,
+        val fullText : Int,
+        val fullTextColor : Int
 ) {
     GREEN(
             R.drawable.dark_greenbackre,
             R.drawable.bg_view_darkgreen,
             R.string.title_green,
             R.string.smallText_green,
-            R.color.green
+            R.color.green,
+            R.string.fullText_green,
+            R.string.fullText_colorGreen
     ),
 
     YELLOW(
@@ -24,7 +28,9 @@ enum class EnumResult(
             R.drawable.bg_view_yellow,
             R.string.title_yellow,
             R.string.smallText_yellow,
-            R.color.yellow
+            R.color.yellow,
+            R.string.fullText_yellow,
+            R.string.fullText_colorYellow
     ),
 
     LIGHTGREEN(
@@ -32,7 +38,9 @@ enum class EnumResult(
             R.drawable.bg_view_green,
             R.string.title_lightgreen,
             R.string.smallText_lightgreen,
-            R.color.lightgreen
+            R.color.lightgreen,
+            R.string.fullText_lightgreen,
+            R.string.ligthgreen_fulltext
     ),
 
     ORANGE(
@@ -40,14 +48,18 @@ enum class EnumResult(
             R.drawable.bg_view_orange,
             R.string.title_orange,
             R.string.smallText_orange,
-            R.color.orange
+            R.color.orange,
+            R.string.fullText_orange,
+            R.string.fullText_colorOrange
     ),
     RED(
             R.drawable.red_backgr,
             R.drawable.bg_view_red,
             R.string.title_red,
             R.string.smallText_red,
-            R.color.red
+            R.color.red,
+            R.string.fullText_red,
+            R.string.fullText_colorRed
     );
 
     companion object {  // с помошью обжект обратились в AnswerActivity-> EnumResult.selectTypeOfEnum()

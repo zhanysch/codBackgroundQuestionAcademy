@@ -3,6 +3,7 @@ package com.example.quetionacademy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.example.quetionacademy.animationuttils.SpinnerTransformation
 import com.example.quetionacademy.answer.AnswerActivity
@@ -55,8 +56,12 @@ class QuestionActivity : AppCompatActivity(), PagerListener {
     }
 
     override fun selectAnswer(answer: Boolean, position: Int) {
-        if (answer) questionResult += 20 // баллы за ответ
+        if (position >= 4 && !answer)
+            questionResult += 20
+        if (position < 4 && answer) questionResult += 20 // баллы за ответ
         if (!answer) questionResult += 0 // вопрос!!!!
+        Log.d("fsgsd",questionResult.toString())
+
         nextPage(position)
     }
     override fun selectAnswerForbuttons(position: Int, points: Int) { // position: Int, points: Int все из Interface listener

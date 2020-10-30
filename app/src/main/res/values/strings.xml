@@ -34,4 +34,9 @@
     <string name="fullText_red">Похоже, о коронавирусе вы\n впервые услышали на этом\n курсе. Как и о необходимых мерах безопасности.\n
 
 У вас высокая вероятность\n заразиться этим вирусом, если вы еще не заражены.\n Пожалуйста, минимизируйте\n все физические контакты с\n внешним миром в самое ближайшее время.</string>
+    <string name="fullText_colorGreen">ограничить физические\n контакты</string>
+    <string name="fullText_colorYellow">соблюдать\n базовые меры\n безопасности</string>
+    <string name="fullText_colorOrange">призываем вас начать \n соблюдать базовые \n рекомендации</string>
+    <string name="fullText_colorRed">\минимизируйте\n все физические контакты</string>
+    <string name="ligthgreen_fulltext">все</string>
 </resources>

@@ -16,19 +16,19 @@ class PagerFourButtonViewHolder(view: View): RecyclerView.ViewHolder(view){
                     position+1 , size)
 
             itemView.btnzero.setOnClickListener {
-                listener.selectAnswerForbuttons(0,position)  // 0 это баллы и позиция
+                listener.selectAnswerForbuttons(position,0)  // 0 это баллы и позиция
             }
          itemView.btnfive.setOnClickListener {
-            listener.selectAnswerForbuttons(15,position)
+            listener.selectAnswerForbuttons(position,15)
          }
 
 
         itemView.btnone.setOnClickListener {
-             listener.selectAnswerForbuttons(10,position)
+             listener.selectAnswerForbuttons(position,10)
             }
 
         itemView.btnten.setOnClickListener {
-            listener.selectAnswerForbuttons(20,position)
+            listener.selectAnswerForbuttons(position,20)
         }
     }
 }
