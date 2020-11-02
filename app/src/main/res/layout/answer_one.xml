@@ -97,7 +97,6 @@
                 android:gravity="center"
                 android:letterSpacing="0.01"
                 android:textColor="@color/dark"
-                android:textSize="17sp"
                 app:layout_constraintTop_toBottomOf="@id/derzhat" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

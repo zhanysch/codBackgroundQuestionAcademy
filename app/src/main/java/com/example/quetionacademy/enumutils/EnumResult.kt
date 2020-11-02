@@ -11,7 +11,8 @@ enum class EnumResult(
         val smallTitle: Int,
         val color : Int,
         val fullText : Int,
-        val fullTextColor : Int
+        val fullTextColor : Int,
+        val textSize : Float
 ) {
     GREEN(
             R.drawable.dark_greenbackre,
@@ -20,7 +21,8 @@ enum class EnumResult(
             R.string.smallText_green,
             R.color.green,
             R.string.fullText_green,
-            R.string.fullText_colorGreen
+            R.string.fullText_colorGreen,
+             17f
     ),
 
     YELLOW(
@@ -30,7 +32,8 @@ enum class EnumResult(
             R.string.smallText_yellow,
             R.color.yellow,
             R.string.fullText_yellow,
-            R.string.fullText_colorYellow
+            R.string.fullText_colorYellow,
+            17f
     ),
 
     LIGHTGREEN(
@@ -40,7 +43,8 @@ enum class EnumResult(
             R.string.smallText_lightgreen,
             R.color.lightgreen,
             R.string.fullText_lightgreen,
-            R.string.ligthgreen_fulltext
+            R.string.ligthgreen_fulltext,
+             17f
     ),
 
     ORANGE(
@@ -50,7 +54,8 @@ enum class EnumResult(
             R.string.smallText_orange,
             R.color.orange,
             R.string.fullText_orange,
-            R.string.fullText_colorOrange
+            R.string.fullText_colorOrange,
+            15f
     ),
     RED(
             R.drawable.red_backgr,
@@ -59,7 +64,8 @@ enum class EnumResult(
             R.string.smallText_red,
             R.color.red,
             R.string.fullText_red,
-            R.string.fullText_colorRed
+            R.string.fullText_colorRed,
+            17f
     );
 
     companion object {  // с помошью обжект обратились в AnswerActivity-> EnumResult.selectTypeOfEnum()

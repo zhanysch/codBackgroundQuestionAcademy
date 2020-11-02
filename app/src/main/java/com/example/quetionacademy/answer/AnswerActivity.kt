@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings.Global.getString
+import android.util.TypedValue
 import com.example.quetionacademy.MainActivity
 import com.example.quetionacademy.QuestionActivity.Companion.POINTS
 import com.example.quetionacademy.R
@@ -20,18 +21,20 @@ class AnswerActivity : AppCompatActivity() {
         val points = intent.getIntExtra(POINTS ,-1) //-1 значен по умолчан
         val result = EnumResult.selectTypeOfEnum(points) // EnumResult.selectTypeOfEnum обратились из EnumResult class companion object
 
+        mainText.text = getString(result.textTitle )
+        secondText.text = getString(result.smallTitle)  // result.smallTitle  result это переменка с 22 строчки smalltitle переменка с enumresult class!
+        tvThird.setTextSize(TypedValue.COMPLEX_UNIT_SP, result.textSize)  // для указа размера текста для разных карточек
 
         parentLayout.setBackgroundResource(result.parentDrawble)
         divider.setBackgroundResource(result.drawbleDivider)
-        mainText.text = getString(result.textTitle )
-        secondText.text = getString(result.smallTitle)
+
         mainText.setTextColor(resources.getColor(result.color))
         secondText.setTextColor(resources.getColor(result.color))
         getSpan(result)
 
 
         btnBack.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+           finish()
         }
     }
 
