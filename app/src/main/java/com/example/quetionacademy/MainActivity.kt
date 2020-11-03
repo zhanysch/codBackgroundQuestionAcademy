@@ -8,6 +8,7 @@ import android.view.TextureView
 import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
+import com.example.quetionacademy.utils.safeOnClickListener
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,8 +24,8 @@ class MainActivity : AppCompatActivity() {
         inputAnimation(tvThird)
     }
 
-    private fun setupListeners() {
-        btnStart.setOnClickListener {
+    private fun setupListeners() {  //safeOnClickListener из класса safeclicklistener, при нескольких нажатий на кнопку не возникала
+        btnStart.safeOnClickListener {  /// несколько одних и тех же активити
             startActivity(Intent(this, QuestionActivity::class.java))
             overridePendingTransition(R.anim.slide_left, R.anim.slide_right)
         }
